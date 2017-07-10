@@ -1,0 +1,9 @@
+package com.soltech.tests;
+
+import com.soltech.base.BaseClass;
+
+public class OpenPositionsPageTest extends BaseClass{
+
+	@Test
+	
+}

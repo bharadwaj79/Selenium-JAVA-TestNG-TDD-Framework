@@ -1,0 +1,23 @@
+package com.soltech.base;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class CommonClass extends BaseClass{
+
+	public Properties getObject() throws IOException{
+		String workingDirectory = System.getProperty("user.dir");
+		FileInputStream objfile = new FileInputStream(new File(workingDirectory+"\\src\\main\\resources\\config\\object.properties"));
+		Properties obj = new Properties();
+		obj.load(objfile);
+		return obj;
+	}
+	
+	public boolean getPageTitle(String title) throws IOException{
+		if (driver.getPageSource().contains(getObject().getProperty("landingPageTitle"))) return true;			
+		return false;		
+	}
+	
+}

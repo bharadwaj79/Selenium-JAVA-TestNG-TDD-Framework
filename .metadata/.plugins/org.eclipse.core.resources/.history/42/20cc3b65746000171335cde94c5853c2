@@ -1,0 +1,49 @@
+package com.soltech.tests;
+
+import static org.testng.Assert.fail;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class TestSoltech {
+  private WebDriver driver;
+  private String baseUrl;
+  private StringBuffer verificationErrors = new StringBuffer();
+
+  @BeforeClass(alwaysRun = true)
+  public void setUp() throws Exception {
+    driver = new ChromeDriver();
+    baseUrl = "http://soltech.net/";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testSoltech() throws Exception {
+    driver.get(baseUrl + "/");
+    driver.manage().window().maximize();
+    driver.findElement(By.cssSelector("span.cd-menu-text")).click();
+    driver.findElement(By.xpath("(//a[contains(text(),'Open Positions')])[2]")).click();
+    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | name=icims_content_iframe | ]]
+    driver.findElement(By.id("jsb_f_keywords_i")).clear();
+    driver.findElement(By.id("jsb_f_keywords_i")).sendKeys("QA");
+    driver.findElement(By.id("jsb_f_keywords_i")).clear();
+    driver.findElement(By.id("jsb_f_keywords_i")).sendKeys("QA");
+    driver.findElement(By.id("jsb_form_submit_i")).click();
+    driver.findElement(By.id("jsb_form_submit_i")).click();
+  }
+
+  @AfterClass(alwaysRun = true)
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
+}

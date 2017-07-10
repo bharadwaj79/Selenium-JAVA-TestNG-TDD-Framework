@@ -1,0 +1,7 @@
+Feature: Test soltech home page
+
+  Scenario: Click on career option
+    Given I navigate to soltech
+    When I click on OpenPositions menu
+    And I click on Careers option
+    Then I verify career page is displayed

@@ -1,0 +1,20 @@
+package com.soltech.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.soltech.base.BaseClass;
+import com.soltech.pages.LandingPage;
+
+
+public class LandingPageTest extends BaseClass{
+		
+	@Test
+	public void testSoltech() throws Exception {
+		LandingPage landingpage = new LandingPage(driver);
+		Assert.assertEquals(landingpage.isPageTitle(),true);
+		landingpage.clickCareersMenu();
+		landingpage.clickOpenPositionsMenu();
+	}
+	
+}

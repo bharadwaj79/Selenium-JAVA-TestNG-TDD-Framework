@@ -1,0 +1,48 @@
+package com.soltech.base;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Properties;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.asserts.SoftAssert;
+
+public class CommonClass extends BaseClass{
+	
+	/*
+	 * The following methods are common methods
+	 */
+	public SoftAssert softAssert() {
+		SoftAssert soft_assert = new SoftAssert();
+		return soft_assert;
+	}
+	
+	public Properties getObject() throws IOException{
+		String workingDirectory = System.getProperty("user.dir");
+		FileInputStream objfile = new FileInputStream(new File(workingDirectory+"\\src\\main\\resources\\config\\object.properties"));
+		Properties obj = new Properties();
+		obj.load(objfile);
+		return obj;
+	}
+	
+	public boolean getPageTitle(String title) throws IOException{
+		if (driver.getPageSource().contains(title)) return true;			
+		return false;		
+	}	
+	
+	public void scrollToDown(){
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("scrollBy(0,2500)");
+	}
+	
+//	public void switchToNewWindow(){
+//		String parentTab = driver.getWindowHandle();		
+//		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+//		newTab.remove(parentTab);
+//		// change focus to new tab		
+//		driver.switchTo().window(newTab.get(0));		
+//	}
+	
+}

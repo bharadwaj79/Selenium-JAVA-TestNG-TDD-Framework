@@ -1,0 +1,25 @@
+package com.soltech.tests;
+
+import org.junit.runner.RunWith;
+
+import com.soltech.base.BaseClass;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "features",
+					  glue = "step_definitions",
+					  plugin = "html:target/cucumber-html-reports")
+
+public class LandingPageTest extends BaseClass{
+		
+//	@Test
+//	public void testSoltech() throws Exception {
+//		LandingPage landingpage = new LandingPage(driver);
+//		Assert.assertEquals(landingpage.isPageTitle(),true);
+//		landingpage.clickCareersMenu();
+//		landingpage.clickOpenPositionsMenu();
+//	}
+	
+}

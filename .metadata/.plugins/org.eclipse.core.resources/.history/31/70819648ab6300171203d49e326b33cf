@@ -1,0 +1,8 @@
+package com.soltech.util;
+
+public class CommonMethods {
+
+	public void switchToIframe(WebElement element){
+	driver.switchTo().frame(element);
+}
+}

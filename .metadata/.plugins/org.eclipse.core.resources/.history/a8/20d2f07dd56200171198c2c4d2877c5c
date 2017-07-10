@@ -1,0 +1,24 @@
+package com.soltech.tests;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.soltech.base.BaseClass;
+import com.soltech.pages.LandingPage;
+import com.soltech.pages.OpenPositionsPage;
+
+public class OpenPositionsPageTest extends BaseClass{
+
+	private LandingPage landingpage;
+	private OpenPositionsPage openpositionspage = PageFactory.initElements(driver, OpenPositionsPage.class);
+	
+	@Test
+	public void findQAPosition() throws InterruptedException{
+		landingpage = PageFactory.initElements(driver, LandingPage.class);
+		landingpage.clickCareersMenu();
+		openpositionspage=landingpage.clickOpenPositionsMenu();
+		openpositionspage.getPageTitle();
+		openpositionspage.clikOnQAPosition();
+		Thread.sleep(5000L);
+	}
+}

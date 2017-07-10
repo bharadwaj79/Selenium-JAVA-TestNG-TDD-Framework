@@ -1,0 +1,56 @@
+package com.soltech.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.soltech.base.CommonClass;
+
+public class JobDetailPage extends CommonClass{
+	 
+	WebDriver driver;
+//	private String jobDetailPageTitle = "Atlanta Software Development Careers |Quality Assurance Automation Engineer";
+//	private String jobName = "Quality Assurance Automation Engineer";
+//	private String jobIdNumber = "2017-2011"; 
+	OpenPositionsPage openpositionpage = new OpenPositionsPage(driver);
+	
+	@FindBy(id="icims_content_iframe")
+	WebElement iFrameId;
+	
+	@FindBy(css="div.iCIMS_MainWrapper.iCIMS_JobPage.iCIMS_Desktop > h1")
+	WebElement jobTitle;
+	
+	@FindBy(css="dl:nth-child(1) > dd")
+	WebElement jobID;
+	
+	public JobDetailPage(WebDriver driver){
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public boolean verifyPageTitle() throws IOException{		
+		if(driver.getTitle().toString().contains(getObject().getProperty("jobDetailPageTitle"))) return true;
+		return false;
+	}
+	
+	public String printTitleOfThePosition(){
+		return jobTitle.getText().toString();
+	}
+	
+	public String printJobID(){
+		return jobID.getText().toString();
+	}
+	
+	public boolean verifyJobName() throws IOException{
+		if(driver.getPageSource().contains(getObject().getProperty("jobName"))) return true;
+		return false;
+	}
+	
+	public boolean verifyJobID() throws IOException{
+		if(driver.getPageSource().contains(getObject().getProperty("jobIdNumber"))) return true;
+		return false;
+	}
+}

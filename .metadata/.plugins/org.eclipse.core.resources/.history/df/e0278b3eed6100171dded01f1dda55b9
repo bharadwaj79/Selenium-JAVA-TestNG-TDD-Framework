@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [QA Challenge]" parallel="tests">
+  <parameter name="baseURL" value="http://soltech.net/"/>
+  <test name="Run in Fireox Browser(failed)" parallel="tests">
+    <parameter name="browserType" value="firefox"/>
+    <classes>
+      <class name="com.soltech.tests.LandingPageTest">
+        <methods>
+          <include name="testSoltech"/>
+          <include name="initializeBaseTest"/>
+          <include name="closeBrowser"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- com.soltech.tests.LandingPageTest -->
+    </classes>
+  </test> <!-- Run in Fireox Browser(failed) -->
+</suite> <!-- Failed suite [QA Challenge] -->

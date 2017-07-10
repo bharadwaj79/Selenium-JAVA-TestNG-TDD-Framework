@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BaseTestClass.java&apos; to &apos;Automation/src/main/java/com.soltech.parent&apos;&#x0D;&#x0A;- Original project: &apos;AmazonDemoProject&apos;&#x0D;&#x0A;- Destination element: &apos;Automation/src/main/java/com.soltech.parent&apos;&#x0D;&#x0A;- Original element: &apos;com.amazon.base.BaseTestClass.java&apos;" description="Copy compilation unit" destination="=Automation/src\/main\/java&lt;com.soltech.parent" element1="/src&lt;com.amazon.base{BaseTestClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1499294721443" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.743 s <<< FAILURE! - in TestSuite
+testSoltech(com.soltech.tests.LandingPageTest)  Time elapsed: 0.089 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at com.soltech.tests.LandingPageTest.testSoltech(LandingPageTest.java:20)
+

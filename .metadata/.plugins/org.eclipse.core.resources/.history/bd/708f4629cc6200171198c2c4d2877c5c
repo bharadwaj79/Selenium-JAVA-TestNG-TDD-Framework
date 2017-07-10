@@ -1,0 +1,14 @@
+package com.soltech.tests;
+
+import com.soltech.base.BaseClass;
+import com.soltech.pages.OpenPositionsPage;
+
+public class OpenPositionsPageTest extends BaseClass{
+
+	OpenPositionsPage openpositionspage = new OpenPositionsPage();
+	
+	@Test
+	public void findQAPosition(){
+		
+	}
+}

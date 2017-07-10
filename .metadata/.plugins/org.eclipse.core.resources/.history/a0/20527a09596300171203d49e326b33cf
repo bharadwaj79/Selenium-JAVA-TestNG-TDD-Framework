@@ -1,0 +1,28 @@
+package com.soltech.tests;
+
+import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
+
+import com.soltech.base.BaseClass;
+import com.soltech.pages.LandingPage;
+import com.soltech.pages.OpenPositionsPage;
+
+public class OpenPositionsPageTest extends BaseClass{
+	 
+	 public static final Logger log = Logger.getLogger(OpenPositionsPageTest.class.getName());	 
+	 OpenPositionsPage openpositionspage;
+	 LandingPage landingpage;
+	
+	@Test
+	public void findQAPosition() throws InterruptedException{
+		log.info("======================= Starting OpenPositionsPageTest =====================");
+		landingpage = new LandingPage(driver);
+		openpositionspage = new OpenPositionsPage(driver);
+		landingpage.clickCareersMenu();
+		openpositionspage=landingpage.clickOpenPositionsMenu();		
+		openpositionspage.getPageTitle();
+		openpositionspage.clikOnQAPosition();
+		Thread.sleep(5000L);
+		log.info("======================= Completed OpenPositionsPageTest =====================");
+	}
+}

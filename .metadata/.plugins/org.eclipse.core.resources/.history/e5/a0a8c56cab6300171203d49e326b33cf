@@ -1,0 +1,10 @@
+package com.soltech.util;
+
+import org.openqa.selenium.WebElement;
+
+public class CommonMethods extends BaseClass{
+
+	public void switchToIframe(WebElement element){
+		driver.switchTo().frame(element);
+	}
+}

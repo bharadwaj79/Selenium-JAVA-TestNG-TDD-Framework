@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="QA Challenge" parallel="false" thread-count="3">
+	<parameter name="baseURL" value="http://soltech.net/" />
+		<!-- <test name="Run in Chrome Browser">
+			<parameter name="browserType" value="chrome" />
+			<classes>
+				<class name="com.soltech.tests.TestRunner" />
+			</classes>
+		</test> -->
+
+		 <test name="Run in Fireox Browser">
+			<parameter name="browserType" value="firefox" />
+			<classes>
+				<class name="com.soltech.tests.TestRunner" />
+			</classes>
+		</test>
+		
+	<!-- <test name="Run in IE Browser">
+			<parameter name="browserType" value="ie" />
+			<classes>
+				<class name="com.soltech.tests.TestRunner" />
+			</classes>
+		</test> -->
+</suite> 

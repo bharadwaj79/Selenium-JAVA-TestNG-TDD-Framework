@@ -1,0 +1,20 @@
+2017-07-08 10:51:10 INFO  TestRunner:22 - ======================= Starting LandingPageTest =====================
+2017-07-08 10:51:19 INFO  TestRunner:27 - ======================= Completed LandingPageTest =====================
+2017-07-08 10:51:19 INFO  TestRunner:32 - ======================= Starting OpenPositionsPageTest ================
+2017-07-08 10:51:19 INFO  BaseClass:93 - ============ Taking failed screenshot ================
+2017-07-08 10:51:27 INFO  BaseClass:107 - ================ Closed browser =====================
+2017-07-08 10:53:47 INFO  TestRunner:22 - ======================= Starting LandingPageTest =====================
+2017-07-08 10:53:56 INFO  TestRunner:27 - ======================= Completed LandingPageTest =====================
+2017-07-08 10:53:56 INFO  TestRunner:32 - ======================= Starting OpenPositionsPageTest ================
+2017-07-08 10:53:59 INFO  BaseClass:93 - ============ Taking failed screenshot ================
+2017-07-08 10:54:05 INFO  BaseClass:107 - ================ Closed browser =====================
+2017-07-08 10:59:42 INFO  TestRunner:22 - ======================= Starting LandingPageTest =====================
+2017-07-08 10:59:52 INFO  TestRunner:27 - ======================= Completed LandingPageTest =====================
+2017-07-08 10:59:52 INFO  TestRunner:32 - ======================= Starting OpenPositionsPageTest ================
+2017-07-08 10:59:56 INFO  BaseClass:93 - ============ Taking failed screenshot ================
+2017-07-08 11:00:07 INFO  BaseClass:107 - ================ Closed browser =====================
+2017-07-08 11:06:43 INFO  TestRunner:22 - ======================= Starting LandingPageTest =====================
+2017-07-08 11:06:53 INFO  TestRunner:27 - ======================= Completed LandingPageTest =====================
+2017-07-08 11:06:53 INFO  TestRunner:32 - ======================= Starting OpenPositionsPageTest ================
+2017-07-08 11:06:57 INFO  BaseClass:93 - ============ Taking failed screenshot ================
+2017-07-08 11:07:05 INFO  BaseClass:107 - ================ Closed browser =====================

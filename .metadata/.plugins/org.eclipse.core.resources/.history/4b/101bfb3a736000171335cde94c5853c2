@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+	<test name="Soltech Demo">
+		<classes>
+			<class name="com.soltech.tests.TestSoltech">
+			<methods>
+				<exclude name="testSoltech"/>
+				<exclude name="method2" />
+				<exclude name="loginTest" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

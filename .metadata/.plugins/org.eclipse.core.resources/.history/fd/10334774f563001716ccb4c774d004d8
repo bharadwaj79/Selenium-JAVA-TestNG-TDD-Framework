@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [QA Challenge]" parallel="tests">
+  <parameter name="baseURL" value="http://soltech.net/"/>
+  <test name="Run in Chrome Browser(failed)" parallel="tests">
+    <parameter name="browserType" value="chrome"/>
+    <classes>
+      <class name="com.soltech.tests.TestRunner">
+        <methods>
+          <include name="verifyJobDetailsPage"/>
+          <include name="searchForOpenQAPositions"/>
+          <include name="initializeBaseTest"/>
+          <include name="takeScreenshotIfFailed"/>
+          <include name="closeBrowser"/>
+          <include name="clickOnCareersOpenPositionsMenu"/>
+        </methods>
+      </class> <!-- com.soltech.tests.TestRunner -->
+    </classes>
+  </test> <!-- Run in Chrome Browser(failed) -->
+</suite> <!-- Failed suite [QA Challenge] -->

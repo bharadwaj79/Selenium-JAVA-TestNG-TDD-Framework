@@ -1,0 +1,8 @@
+INDEX VERSION 1.127+D:\Automation\Soltech\Automation\.metadata\.plugins\org.eclipse.jdt.core
+648612256.index
+2470519452.index
+1477788888.index
+848469205.index
+2709225165.index
+2089224519.index
+1689259093.index

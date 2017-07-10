@@ -1,0 +1,51 @@
+package com.soltech.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class JobDetailPage{
+	 
+	WebDriver driver;
+	private String jobDetailPageTitle = "Atlanta Software Development Careers |Quality Assurance Automation Engineer";
+	private String jobName = "Quality Assurance Automation Engineer";
+	private String jobIdNumber = "2017-2011"; 
+	OpenPositionsPage openpositionpage = new OpenPositionsPage(driver);
+	
+	@FindBy(id="icims_content_iframe")
+	WebElement iFrameId;
+	
+	@FindBy(css="div.iCIMS_MainWrapper.iCIMS_JobPage.iCIMS_Desktop > h1")
+	WebElement jobTitle;
+	
+	@FindBy(css="dl:nth-child(1) > dd")
+	WebElement jobID;
+	
+	public JobDetailPage(WebDriver driver){
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public boolean verifyPageTitle(){		
+		if(driver.getTitle().toString().contains(jobDetailPageTitle)) return true;
+		return false;
+	}
+	
+	public String printTitleOfThePosition(){
+//		driver.switchTo().frame(iFrameId);
+		return jobTitle.getText().toString();
+	}
+	
+	public String printJobID(){
+		return jobID.getText().toString();
+	}
+	
+	public boolean verifyJobName(){
+		
+	}
+	
+	public boolean verifyJobID(){
+		
+	}
+}

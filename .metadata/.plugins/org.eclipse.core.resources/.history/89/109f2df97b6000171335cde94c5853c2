@@ -1,0 +1,69 @@
+package com.soltech.tests;
+
+import static org.testng.Assert.fail;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class TestSoltech {
+	private WebDriver driver;
+	private String baseUrl;
+	private StringBuffer verificationErrors = new StringBuffer();
+
+	@BeforeClass(alwaysRun = true)
+	public void setUp() throws Exception {
+		driver = new ChromeDriver();
+		baseUrl = "http://soltech.net/";
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+
+	@Test
+	public void testSoltech() throws Exception {
+		driver.get(baseUrl + "/");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().window().setSize(new Dimension(1814, 974));
+
+		Actions action = new Actions(driver);
+		WebElement career = driver.findElement(By.cssSelector("#navbar > div > ul > li:nth-child(5) > a"));
+		action.moveToElement(career).build().perform();
+		Thread.sleep(5000L);
+		String parentTab = driver.getWindowHandle();
+		WebElement openPositions = driver
+				.findElement(By
+						.cssSelector("#navbar > div > ul > li:nth-child(5) > ul > li:nth-child(2) > a"));
+		action.moveToElement(openPositions).click().build().perform();
+		Thread.sleep(3000L);
+		
+		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+		newTab.remove(parentTab);
+		// change focus to new tab
+		driver.switchTo().window(newTab.get(0));
+		Thread.sleep(3000L);
+		driver.manage().window().maximize();
+		driver.findElement(By.linkText("Quality Assurance Automation Engineer")).click();
+//		JavascriptExecutor jse = (JavascriptExecutor) driver;
+//		jse.executeScript("scrollBy(0,2500)");
+//		driver.findElement(By.id("jsb_f_keywords_i")).clear();
+//		driver.findElement(By.id("jsb_f_keywords_i")).sendKeys("QA");
+//		driver.findElement(By.id("jsb_form_submit_i")).click();
+	}
+
+	@AfterClass(alwaysRun = true)
+	public void tearDown() throws Exception {
+		driver.quit();
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+			fail(verificationErrorString);
+		}
+	}
+}

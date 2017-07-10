@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 51.723 s <<< FAILURE! - in TestSuite
+searchForOpenQAPositions(com.soltech.tests.TestRunner)  Time elapsed: 4.587 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.soltech.tests.TestRunner.searchForOpenQAPositions(TestRunner.java:35)
+

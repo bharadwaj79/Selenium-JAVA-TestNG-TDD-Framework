@@ -1,0 +1,44 @@
+package step_definitions;
+
+import org.junit.runner.RunWith;
+import org.testng.Assert;
+
+import com.soltech.base.BaseClassTest;
+import com.soltech.pages.LandingPage;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "Feature")
+public class home_steps extends BaseClassTest{
+		
+		@Given("^I navigate to soltech$")
+		public void voidNavigatetoSoltech(){
+		    // Write code here that turns the phrase above into concrete actions
+			LandingPage landingpage = new LandingPage(driver);
+			Assert.assertEquals(landingpage.isPageTitle(),true);		    
+		}
+
+		@When("^I click on OpenPositions menu$")
+		public void click_on_OpenPositions_menu() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+			landingpage.clickOpenPositionsMenu();		    
+		}
+
+		@When("^I click on Careers option$")
+		public void click_on_Careers_option() {
+		    // Write code here that turns the phrase above into concrete actions
+			landingpage.clickCareersMenu();		    
+		}
+				
+		@Then("^I verify career page is displayed$")
+		public void verify_career_page_is_displayed() throws Throwable {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new PendingException();
+		}
+		
+	}

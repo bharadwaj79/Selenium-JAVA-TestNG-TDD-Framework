@@ -1,0 +1,24 @@
+package com.soltech.util;
+
+import org.openqa.selenium.WebElement;
+
+public class CommonMethods extends BaseClass{
+
+	public void switchToIframe(WebElement element){
+		driver.switchTo().frame(element);
+	}
+	
+	public boolean verifyPageTitle(String title){		
+		if(driver.getTitle().toString().contains(title)) return true;
+		return false;
+	}
+	
+	public return_type name() {
+		
+	} void switchToNewWindow(){
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+	}
+	
+}

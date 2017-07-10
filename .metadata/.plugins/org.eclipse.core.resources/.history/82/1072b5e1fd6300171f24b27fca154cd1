@@ -1,0 +1,34 @@
+package com.soltech.base;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class CommonClass extends BaseClass{
+
+	public Properties getObject() throws IOException{
+		String workingDirectory = System.getProperty("user.dir");
+		System.out.println("current working directory:"+workingDirectory);
+		FileInputStream objfile = new FileInputStream(new File(workingDirectory+"\\src\\main\\resources\\config\\object.properties"));
+		Properties obj = new Properties();
+		obj.load(objfile);
+		return obj;
+	}
+	
+	public void switchToNewWindow(){
+		String parentWindow = driver.getWindowHandle();
+		System.out.println("outside of for loop:"+parentWindow);
+		for(String winHandle : driver.getWindowHandles()){
+			 if(!winHandle.equals(parentWindow))
+	          {
+				 driver.switchTo().window(winHandle);
+				 System.out.println("in if condition:"+driver.switchTo().window(winHandle));
+	          }else{
+	        	  driver.switchTo().window(parentWindow);
+	          }
+			 
+		}
+	}
+	
+}
