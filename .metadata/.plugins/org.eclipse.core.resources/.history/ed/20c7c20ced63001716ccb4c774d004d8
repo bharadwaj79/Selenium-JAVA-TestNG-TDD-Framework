@@ -1,9 +1,0 @@
-2017-07-08 10:39:24 INFO  TestRunner:20 - ======================= Starting LandingPageTest =====================
-2017-07-08 10:39:33 INFO  TestRunner:25 - ======================= Completed LandingPageTest =====================
-2017-07-08 10:39:33 INFO  TestRunner:30 - ======================= Starting OpenPositionsPageTest ================
-2017-07-08 10:39:33 INFO  OpenPositionsPage:54 - ============== Switching to iFrame ==================
-2017-07-08 10:39:35 INFO  OpenPositionsPage:62 - ============== Clicking on job search button  ==================
-2017-07-08 10:39:48 INFO  TestRunner:37 - ======================= Completed OpenPositionsPageTest ===============
-2017-07-08 10:39:48 INFO  TestRunner:42 - ======================= Starting JobDetailsPageTest ================
-2017-07-08 10:39:49 INFO  TestRunner:49 - ======================= Starting JobDetailsPageTest ================
-2017-07-08 10:39:52 INFO  BaseClass:107 - ================ Closed browser =====================
